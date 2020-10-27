@@ -143,14 +143,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AISystem.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Gameplay.cpp" />
+    <ClCompile Include="HealthSystem.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AIComponent.h" />
+    <ClInclude Include="AISystem.h" />
+    <ClInclude Include="Component.h" />
+    <ClInclude Include="Entity.h" />
+    <ClInclude Include="FXComponent.h" />
+    <ClInclude Include="FXSystem.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GamepadComponent.h" />
+    <ClInclude Include="GamepadSystem.h" />
     <ClInclude Include="Gameplay.h" />
     <ClInclude Include="Globals.h" />
+    <ClInclude Include="HealthComponent.h" />
+    <ClInclude Include="HealthSystem.h" />
+    <ClInclude Include="PhysicsComponent.h" />
+    <ClInclude Include="PhysicsSystem.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
