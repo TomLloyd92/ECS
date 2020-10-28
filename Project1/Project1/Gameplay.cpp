@@ -3,8 +3,6 @@
 
 GamePlay::GamePlay()
 {
-
-
 	//Add Player components
 	player.setName("Player");
 	player.addComponent(Physics);
@@ -17,17 +15,17 @@ GamePlay::GamePlay()
 	gamepadSystem.addEntity(player);
 	physicsSystem.addEntity(player);
 
-
 	//Add Dog components
 	dog.setName("Dog");
 	dog.addComponent(AI);
 	dog.addComponent(Physics);
 	dog.addComponent(FX);
+	//dog.addComponent(GamePad);	//Test on giving the Dog Gamepad Component
+	//gamepadSystem.addEntity(dog);	//Test on adding dog to the Gamepad System
 	//Assign Dog Entity to systems
 	physicsSystem.addEntity(dog);
 	aiSystem.addEntity(dog);
 	fxSystem.addEntity(dog);
-
 
 	/*
 	//Troll
