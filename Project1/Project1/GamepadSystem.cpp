@@ -10,7 +10,6 @@ void GamepadSystem::update()
 
 		std::cout << it->getName() << " is ";
 
-
 		//Lamda to find the GamePad component
 		auto comp_match_find = [](Component com)
 		{

@@ -48,4 +48,23 @@ private:
 	PhysicsSystem physicsSystem;
 	GamepadSystem gamepadSystem;
 
+	//Time
+	//Physics Timer
+	sf::Clock clockPhysics;
+	sf::Time timeSinceLastUpdatePhysics = sf::Time::Zero;
+	sf::Time timePerFramePhysics = sf::seconds(1.0f / 1.0f);
+	//Fx Timer
+	sf::Clock clockFx;
+	sf::Time timeSinceLastUpdateFx = sf::Time::Zero;
+	sf::Time timePerFrameFx = sf::seconds(1.0f / 0.5f);
+	//AI Timer
+	sf::Clock clockAI;
+	sf::Time timeSinceLastUpdateAI = sf::Time::Zero;
+	sf::Time timePerFrameAI = sf::seconds(1.0f / 2.0f);
+	//Controller Timer
+	sf::Clock clockGamePad;
+	sf::Time timeSinceLastUpdateGamePad = sf::Time::Zero;
+	sf::Time timePerFrameGamePad = sf::seconds(1.0f / 30.0f);
+
+
 };

@@ -15,5 +15,4 @@ public:
 
 private:
 	sf::Vector2f targetPos{ 0,0 };
-
 };

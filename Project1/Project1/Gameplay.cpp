@@ -4,6 +4,7 @@
 GamePlay::GamePlay()
 {
 
+
 	//Add Player components
 	player.setName("Player");
 	player.addComponent(Physics);
@@ -66,10 +67,36 @@ GamePlay::~GamePlay()
 
 void GamePlay::update(sf::Time t_deltaTime)
 {
-	aiSystem.update();
-	fxSystem.update();
-	gamepadSystem.update();
-	physicsSystem.update();
+	//Update Physics (Every Second)
+	timeSinceLastUpdatePhysics += clockPhysics.restart();
+	if (timeSinceLastUpdatePhysics > timePerFramePhysics)
+	{
+		timeSinceLastUpdatePhysics -= timePerFramePhysics;
+		physicsSystem.update();
+	}
+
+	//Update FX (Every Two Seconds)
+	timeSinceLastUpdateFx += clockFx.restart();
+	if (timeSinceLastUpdateFx > timePerFrameFx)
+	{
+		timeSinceLastUpdateFx -= timePerFrameFx;
+		fxSystem.update();
+	}
+	//Update AI (Twice every second)
+	timeSinceLastUpdateAI += clockAI.restart();
+	if (timeSinceLastUpdateAI > timePerFrameAI)
+	{
+		timeSinceLastUpdateAI -= timePerFrameAI;
+		aiSystem.update();
+	}
+	//Update Gamepad (30 times a second)
+	timeSinceLastUpdateGamePad += clockGamePad.restart();
+	if (timeSinceLastUpdateGamePad > timePerFrameGamePad)
+	{
+		timeSinceLastUpdateGamePad -= timePerFrameGamePad;
+		gamepadSystem.update();
+	}
+
 }
 
 void GamePlay::render(sf::RenderWindow& t_window)
