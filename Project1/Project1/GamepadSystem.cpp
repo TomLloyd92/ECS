@@ -10,12 +10,22 @@ void GamepadSystem::update()
 
 		std::cout << it->getName() << " is ";
 
-		for (int i = 0; i < coms.size(); i++)
+
+		//Lamda to find the GamePad component
+		auto comp_match_find = [](Component com)
 		{
-			if (coms.at(i).getID() == comp::GamePad)
-			{
-				std::cout << "Updating Gamepad" << std::endl;
-			}
+			return com.getID() == comp::GamePad;
+		};
+		auto AIComponentIter = std::find_if(begin(coms), end(coms), comp_match_find);
+		if (AIComponentIter == end(coms))
+		{
+			//Return Error if it is not found
+			std::cout << "NOT UPDATING GAMEPAD AS IT HAS NO GAMEPAD COMPONENT" << std::endl;
+		}
+		else
+		{
+			//Output updating
+			std::cout << "Updating GAMEPAD" << std::endl;
 		}
 	}
 }

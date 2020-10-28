@@ -10,12 +10,21 @@ void PhysicsSystem::update()
 
 		std::cout << it->getName() << " is ";
 
-		for (int i = 0; i < coms.size(); i++)
+		//Lamda to find the GamePad component
+		auto comp_match_find = [](Component com)
 		{
-			if (coms.at(i).getID() == comp::Physics)
-			{
-				std::cout << "Updating Physics" << std::endl;
-			}
+			return com.getID() == comp::Physics;
+		};
+		auto AIComponentIter = std::find_if(begin(coms), end(coms), comp_match_find);
+		if (AIComponentIter == end(coms))
+		{
+			//Return Error if it is not found
+			std::cout << "NOT UPDATING PHYSICS AS IT HAS NO PHYSICS COMPONENT" << std::endl;
+		}
+		else
+		{
+			//Output updating
+			std::cout << "Updating PHYSICS" << std::endl;
 		}
 	}
 }
