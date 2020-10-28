@@ -1,5 +1,7 @@
 #pragma once
 #include "Entity.h"
+#include "Component.h"
+#include "AIComponent.h"
 
 class AISystem
 {

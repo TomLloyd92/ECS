@@ -43,9 +43,9 @@ private:
 	GamepadComponent GamePad;
 
 	//Systems
-	AISystem AISystem;
-	FXSystem FXSystem;
-	PhysicsSystem PhysicsSystem;
-	GamepadSystem GamepadSystem;
+	AISystem aiSystem;
+	FXSystem fxSystem;
+	PhysicsSystem physicsSystem;
+	GamepadSystem gamepadSystem;
 
 };

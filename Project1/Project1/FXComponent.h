@@ -1,11 +1,16 @@
 #pragma once
 #include "Component.h"
 
-class FXComponent : Component
+class FXComponent : public Component
 {
 public:
-	FXComponent() {};
+	FXComponent() { setId(comp::FX); };
+
+	//Set Target
+	void setParticleEffect(bool t_particleOn) { this->particleOn = t_particleOn; };
+	//Get Target
+	bool getTargetPos() { return particleOn; };
 
 private:
-
+	bool particleOn = false;
 };

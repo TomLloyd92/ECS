@@ -1,10 +1,10 @@
 #pragma once
 #include "Component.h"
 
-class PhysicsComponent : Component
+class PhysicsComponent : public Component
 {
 public:
-	PhysicsComponent() {};
+	PhysicsComponent() { setId(comp::Physics); };
 
 private:
 

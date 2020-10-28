@@ -1,10 +1,10 @@
 #pragma once
 #include "Component.h"
 
-class GamepadComponent : Component
+class GamepadComponent : public Component
 {
 public:
-	GamepadComponent() {};
+	GamepadComponent() { setId(comp::GamePad); };
 
 private:
 
