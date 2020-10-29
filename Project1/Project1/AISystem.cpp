@@ -5,19 +5,19 @@ void AISystem::update()
 	//auto iter = entities.begin();
 	//auto endIter = entities.end();
 
-	std::vector<Component> comps = entities.front().getComponents();
+	std::vector<Component*> comps = entities.front().getComponents();
 
 	for (auto it = begin(entities); it != end(entities); ++it) 
 	{
 		std::cout << it->getName() << " is " ;
 
-		std::vector<Component> coms = it->getComponents();
+		std::vector<Component*> coms = it->getComponents();
 
 
 		//Lamda to find the AI component
-		auto comp_match_find = [](Component com)
+		auto comp_match_find = [](Component *com)
 		{
-			return com.getID() == comp::AI;
+			return com->getID() == comp::AI;
 		};
 		auto AIComponentIter =  std::find_if(begin(coms), end(coms), comp_match_find);
 		if (AIComponentIter == end(coms))

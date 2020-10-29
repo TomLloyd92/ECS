@@ -1,5 +1,6 @@
 #pragma once
 #include "Entity.h"
+#include "GamepadComponent.h"
 
 class GamepadSystem
 {

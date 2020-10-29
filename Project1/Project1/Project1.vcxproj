@@ -144,6 +144,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AISystem.cpp" />
+    <ClCompile Include="Entity.cpp" />
     <ClCompile Include="FXSystem.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GamepadSystem.cpp" />

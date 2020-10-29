@@ -37,10 +37,10 @@ private:
 	Entity pig;
 
 	//Components
-	AIComponent AI;
-	FXComponent FX;
-	PhysicsComponent Physics;
-	GamepadComponent GamePad;
+	AIComponent *AI;
+	FXComponent *FX;
+	PhysicsComponent *Physics;
+	GamepadComponent *GamePad;
 
 	//Systems
 	AISystem aiSystem;
