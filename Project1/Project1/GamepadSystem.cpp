@@ -22,28 +22,36 @@ void GamepadSystem::update()
 		}
 		else
 		{
-			//Use dynamic cast to cast to GamepadComponent 
-			//dynamic_cast <GamepadComponent*> (GamePadComponentIter);
+			//Cast to Gamepad Component
+			GamepadComponent* gc = (GamepadComponent*)*GamePadComponentIter;
+
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 			{
-				std::cout << it->getName() << " is ";
-
-				std::cout << "Jumping" << std::endl;
+				//Move the Y position Up
+				gc->setPos(sf::Vector2f(gc->getPos().x, gc->getPos().y + 1));
+				std::cout << it->getName() << " Position ";
+				std::cout << "X:" << gc->getPos().x << " Y:" << gc->getPos().y << std::endl;
 			}
 			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 			{
-				std::cout << it->getName() << " is ";
-				std::cout << "Moving Left" << std::endl;
+				//Move the x position left
+				gc->setPos(sf::Vector2f(gc->getPos().x - 1, gc->getPos().y));
+				std::cout << it->getName() << " Position ";
+				std::cout << "X:" << gc->getPos().x << " Y:" << gc->getPos().y << std::endl;
 			}
 			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 			{
-				std::cout << it->getName() << " is ";
-				std::cout << "Moving Right" << std::endl;
+				//Move the x position Right
+				gc->setPos(sf::Vector2f(gc->getPos().x + 1, gc->getPos().y));
+				std::cout << it->getName() << " Position ";
+				std::cout << "X:" << gc->getPos().x << " Y:" << gc->getPos().y << std::endl;
 			}
 			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 			{
-				std::cout << it->getName() << " is ";
-				std::cout << "Crouching" << std::endl;
+				//Move the Y position Down
+				gc->setPos(sf::Vector2f(gc->getPos().x, gc->getPos().y - 1));
+				std::cout << it->getName() << " Position ";
+				std::cout << "X:" << gc->getPos().x << " Y:" << gc->getPos().y << std::endl;
 			}
 		}
 	}
